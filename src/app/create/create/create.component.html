@@ -1,6 +1,12 @@
 <h1>ペットをつくる</h1>
 
-<p>カルーセル入る</p>
+<div>
+  <swiper [config]="config" [(index)]="selectedPedId">
+    <div *ngFor="let petId of petIds">
+      <img src="/assets/images/pet-{{ petId }}.png" alt="">
+    </div>
+  </swiper>
+</div>
 
 <form [formGroup] = "form" (ngSubmit)= "submit()">
   <mat-form-field>
@@ -14,6 +20,6 @@
     <mat-radio-button value="female">女性</mat-radio-button>
   </mat-radio-group>
   <div>
-    <button [disabled]= "form.invalid" mat-raised-button color="primary">つくる</button>
+    <button mat-raised-button color="primary">つくる</button>
   </div>
 </form>
