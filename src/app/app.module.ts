@@ -10,6 +10,7 @@ import { firebaseConfig } from '../environments/environment';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule, // imports firebase/database, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
